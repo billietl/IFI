@@ -6,6 +6,7 @@ import javax.persistence.Id;
 
 @Entity
 public class UserDAO implements fr.univlille1.tiir.music.dao.User{
+	
 	private static final long serialVersionUID = 1L;
 	
 	// Persistent Fields:
