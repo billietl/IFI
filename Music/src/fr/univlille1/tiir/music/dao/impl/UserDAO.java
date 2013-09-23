@@ -1,12 +1,11 @@
 package fr.univlille1.tiir.music.dao.impl;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class User implements Serializable{
+public class UserDAO implements fr.univlille1.tiir.music.dao.User{
 	private static final long serialVersionUID = 1L;
 	
 	// Persistent Fields:
@@ -16,10 +15,10 @@ public class User implements Serializable{
     private String pseudo;
  
     // Constructors:
-    public User() {
+    public UserDAO() {
     }
  
-    public User(String pseudo) {
+    public UserDAO(String pseudo) {
         this.pseudo = pseudo;
     }
  
