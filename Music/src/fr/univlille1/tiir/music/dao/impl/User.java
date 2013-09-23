@@ -1,4 +1,4 @@
-package fr.univlille1.tiir.music.dao.Impl;
+package fr.univlille1.tiir.music.dao.impl;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
