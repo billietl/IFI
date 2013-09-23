@@ -13,17 +13,17 @@ public class UserDAO implements fr.univlille1.tiir.music.dao.User{
 	
 	// Persistent Fields:
     @Id
-    @GeneratedValue
-    Long id;
-    private List<fr.univlille1.tiir.music.dao.Music> bibliothèque;
     private String pseudo;
+    private String passwd;
+    private List<fr.univlille1.tiir.music.dao.Music> bibliothèque; // relation avec Music (Own)
  
     // Constructors:
     public UserDAO() {
     }
  
-    public UserDAO(String pseudo) {
+    public UserDAO(String pseudo, String passwd) {
         this.pseudo = pseudo;
+        this.passwd = passwd;
     }
  
     // String Representation:
@@ -31,4 +31,8 @@ public class UserDAO implements fr.univlille1.tiir.music.dao.User{
     public String toString() {
         return "Utilisateur : " + pseudo;
     }
+
+	public String getNickName() {
+		return this.pseudo;
+	}
 }
