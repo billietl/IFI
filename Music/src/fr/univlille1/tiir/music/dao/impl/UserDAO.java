@@ -3,7 +3,6 @@ package fr.univlille1.tiir.music.dao.impl;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
