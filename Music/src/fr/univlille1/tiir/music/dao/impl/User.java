@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import fr.univlille1.tiir.music.dao.*;
 
 @Entity
-public class UserDAO implements fr.univlille1.tiir.music.dao.User{
+public class User implements fr.univlille1.tiir.music.dao.User{
 
 	private static final long serialVersionUID = 1L;
 
@@ -16,13 +16,12 @@ public class UserDAO implements fr.univlille1.tiir.music.dao.User{
 	@Id
 	private String pseudo;
 	private String passwd;
-	private List<Music> bibliothèque; // relation avec Music (Own)
 
 	// Constructors:
-	public UserDAO() {
+	public User() {
 	}
 
-	public UserDAO(String pseudo, String passwd) {
+	public User(String pseudo, String passwd) {
 		this.pseudo = pseudo;
 		this.passwd = passwd;
 	}

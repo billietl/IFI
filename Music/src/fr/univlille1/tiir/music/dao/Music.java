@@ -11,4 +11,5 @@ public interface Music extends Serializable {
 	public String getArtiste();
 	public void setArtiste(String artiste);
 	public String toString();
+	
 }

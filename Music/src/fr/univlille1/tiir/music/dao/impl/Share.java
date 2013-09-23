@@ -2,11 +2,13 @@ package fr.univlille1.tiir.music.dao.impl;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 
 import fr.univlille1.tiir.music.dao.*;
 
 @Entity
-public class ShareDAO implements fr.univlille1.tiir.music.dao.Share{
+@IdClass(ShareDAOIdClass.class)
+public class Share implements fr.univlille1.tiir.music.dao.Share{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -17,10 +19,10 @@ public class ShareDAO implements fr.univlille1.tiir.music.dao.Share{
     private User utilisateur;
  
     // Constructors:
-    public ShareDAO() {
+    public Share() {
     }
  
-    public ShareDAO(User utilisateur, Music piste) {
+    public Share(User utilisateur, Music piste) {
         this.utilisateur = utilisateur;
         this.piste = piste;
     }

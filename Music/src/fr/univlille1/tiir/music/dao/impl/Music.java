@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class MusicDAO implements fr.univlille1.tiir.music.dao.Music{
+public class Music implements fr.univlille1.tiir.music.dao.Music{
 
 	private static final long serialVersionUID = 1L;
 
@@ -15,12 +15,13 @@ public class MusicDAO implements fr.univlille1.tiir.music.dao.Music{
 	private File path;
 	private String titre;
 	private String artiste;
+	private User owner;
 
 	// Constructors:
-	public MusicDAO() {
+	public Music() {
 	}
 
-	public MusicDAO(String titre) {
+	public Music(String titre) {
 		this.titre = titre;
 	}
 
