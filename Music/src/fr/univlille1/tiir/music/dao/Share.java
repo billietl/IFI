@@ -1,5 +1,9 @@
 package fr.univlille1.tiir.music.dao;
 
-public interface Share {
+import java.io.Serializable;
 
+public interface Share extends Serializable {
+
+	public String toString();
+	
 }
