@@ -1,5 +1,7 @@
 package fr.univlille1.tiir.music.dao.impl;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +15,7 @@ public class UserDAO implements fr.univlille1.tiir.music.dao.User{
     @Id
     @GeneratedValue
     Long id;
+    private List<fr.univlille1.tiir.music.dao.Music> bibliothèque;
     private String pseudo;
  
     // Constructors:
