@@ -3,7 +3,7 @@
 	<persistence-unit name="Music" transaction-type="RESOURCE_LOCAL">
 		<class>fr.univlille1.tiir.music.dao.impl.Music</class>
 		<class>fr.univlille1.tiir.music.dao.impl.Share</class>
-		<class>fr.univlille1.tiir.music.dao.impl.User</class>
+		<class>fr.univlille1.tiir.music.dao.impl.Utilisateur</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/ifidb"/>
 			<property name="javax.persistence.jdbc.user" value="ifi"/>

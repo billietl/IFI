@@ -1,6 +1,6 @@
 package fr.univlille1.tiir.music.dao;
 
-public interface User {
+public interface Utilisateur {
 	public long getId();
 	public String getNom();
 	public String getPrenom();
