@@ -1,5 +1,8 @@
 package fr.univlille1.tiir.music.dao.impl;
 
+import javax.persistence.Entity;
+
+@Entity
 public class User implements fr.univlille1.tiir.music.dao.User {
 
 	@Override
