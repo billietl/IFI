@@ -1,9 +1,9 @@
 create table Musique(
 	musique_id bigint,
-	path varchar(50),
 	titre varchar(50),
 	artiste varchar(50),
-	proprietaire bigint
+	proprietaire bigint,
+	data bytea
 );
 
 create table Utilisateur(

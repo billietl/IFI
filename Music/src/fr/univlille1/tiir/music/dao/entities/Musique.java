@@ -21,7 +21,7 @@ public class Musique implements Serializable {
 
 	private String artiste;
 
-	private String path;
+	private byte[] data;
 
 	private String titre;
 
@@ -53,12 +53,12 @@ public class Musique implements Serializable {
 		this.artiste = artiste;
 	}
 
-	public String getPath() {
-		return this.path;
+	public byte[] getData() {
+		return this.data;
 	}
 
-	public void setPath(String path) {
-		this.path = path;
+	public void setData(byte[] data) {
+		this.data = data;
 	}
 
 	public String getTitre() {
