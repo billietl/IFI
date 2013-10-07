@@ -17,9 +17,6 @@ public class Partage implements Serializable {
 	@Column(name="partage_id")
 	private Long partageId;
 
-	@Column(name="utilisateur_id")
-	private Long utilisateurId;
-
 	//bi-directional many-to-one association to Musique
 	@ManyToOne
 	@JoinColumn(name="musique_id")
@@ -27,7 +24,7 @@ public class Partage implements Serializable {
 
 	//bi-directional many-to-one association to Utilisateur
 	@ManyToOne
-	@JoinColumn(name="musique_id")
+	@JoinColumn(name="utilisateur_id")
 	private Utilisateur utilisateur;
 
 	public Partage() {
@@ -39,14 +36,6 @@ public class Partage implements Serializable {
 
 	public void setPartageId(Long partageId) {
 		this.partageId = partageId;
-	}
-
-	public Long getUtilisateurId() {
-		return this.utilisateurId;
-	}
-
-	public void setUtilisateurId(Long utilisateurId) {
-		this.utilisateurId = utilisateurId;
 	}
 
 	public Musique getMusique() {

@@ -97,18 +97,18 @@ public class Utilisateur implements Serializable {
 		this.partages = partages;
 	}
 
-	public Partage addPartage(Partage partage) {
-		getPartages().add(partage);
-		partage.setUtilisateur(this);
+	public Partage addPartages(Partage partages) {
+		getPartages().add(partages);
+		partages.setUtilisateur(this);
 
-		return partage;
+		return partages;
 	}
 
-	public Partage removePartage(Partage partage) {
-		getPartages().remove(partage);
-		partage.setUtilisateur(null);
+	public Partage removePartages(Partage partages) {
+		getPartages().remove(partages);
+		partages.setUtilisateur(null);
 
-		return partage;
+		return partages;
 	}
 
 }
