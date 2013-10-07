@@ -25,4 +25,4 @@ alter table Partage add primary key (partage_id);
 
 alter table Musique add foreign key (proprietaire) references Utilisateur (utilisateur_id);
 alter table Partage add foreign key (musique_id) references Musique (musique_id);
-alter table Partage add foreign key (musique_id) references Utilisateur (utilisateur_id);
+alter table Partage add foreign key (utilisateur_id) references Utilisateur (utilisateur_id);
