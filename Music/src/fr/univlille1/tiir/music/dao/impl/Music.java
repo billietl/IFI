@@ -12,27 +12,23 @@ public class Music implements fr.univlille1.tiir.music.dao.Music {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long music_id;
 	private String path;
 	private String titre;
 	private String artiste;
 	
-	@Override
 	public long getId() {
-		return this.id;
+		return this.music_id;
 	}
 
-	@Override
 	public String getPath() {
 		return this.path;
 	}
 
-	@Override
 	public String getTitre() {
 		return this.titre;
 	}
 
-	@Override
 	public String getArtiste() {
 		return this.artiste;
 	}

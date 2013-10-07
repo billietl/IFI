@@ -12,27 +12,23 @@ public class Utilisateur implements fr.univlille1.tiir.music.dao.Utilisateur {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long utilisateur_id;
 	private String nom;
 	private String prenom;
 	private String pseudo;
 	
-	@Override
 	public long getId() {
-		return this.id;
+		return this.utilisateur_id;
 	}
 
-	@Override
 	public String getNom() {
 		return this.nom;
 	}
 
-	@Override
 	public String getPrenom() {
 		return this.prenom;
 	}
 
-	@Override
 	public String getPseudo() {
 		return this.pseudo;
 	}

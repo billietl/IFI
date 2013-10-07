@@ -12,21 +12,18 @@ public class Share implements fr.univlille1.tiir.music.dao.Share{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long share_id;
 	private long musicId;
 	private long sharedWithId;
 	
-	@Override
 	public long getId() {
-		return this.id;
+		return this.share_id;
 	}
 
-	@Override
 	public long getMusic() {
 		return this.musicId;
 	}
 
-	@Override
 	public long getSharedWith() {
 		return this.sharedWithId;
 	}
