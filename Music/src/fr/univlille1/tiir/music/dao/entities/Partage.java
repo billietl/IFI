@@ -27,7 +27,11 @@ public class Partage implements Serializable {
 	@JoinColumn(name="utilisateur_id")
 	private Utilisateur utilisateur;
 
-	public Partage() {
+	private Partage() {}
+	
+	public Partage(Musique concernee, Utilisateur beneficiaire){
+		this.musique = concernee;
+		this.utilisateur = beneficiaire;
 	}
 
 	public Long getPartageId() {

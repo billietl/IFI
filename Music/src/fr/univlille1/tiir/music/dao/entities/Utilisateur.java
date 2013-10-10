@@ -32,7 +32,12 @@ public class Utilisateur implements Serializable {
 	@OneToMany(mappedBy="utilisateur")
 	private List<Partage> partages;
 
-	public Utilisateur() {
+	private Utilisateur() {}
+	
+	public Utilisateur(String email, String password, String pseudo){
+		this.email = email;
+		this.pseudo = pseudo;
+		this.password = password;
 	}
 
 	public Long getUtilisateurId() {

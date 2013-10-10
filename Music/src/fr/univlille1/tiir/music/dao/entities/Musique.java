@@ -34,7 +34,12 @@ public class Musique implements Serializable {
 	@OneToMany(mappedBy="musique")
 	private List<Partage> partages;
 
-	public Musique() {
+	private Musique() {}
+	
+	public Musique(String artiste, String titre){
+		this.artiste = artiste;
+		this.titre = titre;
+		this.data = new byte[0];
 	}
 
 	public Long getMusiqueId() {
