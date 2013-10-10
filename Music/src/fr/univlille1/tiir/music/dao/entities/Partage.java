@@ -1,6 +1,7 @@
 package fr.univlille1.tiir.music.dao.entities;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 
@@ -14,6 +15,7 @@ public class Partage implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="partage_id")
 	private Long partageId;
 
