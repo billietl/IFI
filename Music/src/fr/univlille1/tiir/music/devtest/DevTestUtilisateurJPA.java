@@ -18,10 +18,11 @@ public class DevTestUtilisateurJPA {
 		System.out.println("C'est bon ici!");
 
 		// save a couple of Utilisateurs
-		repository.save(new Utilisateur("hello@world.com", "maman", "hello"));
-		repository.save(new Utilisateur("hello.bis@world.com", "papa", "hello bis"));
-		repository.save(new Utilisateur("robert@gayzou.org", "j'aime la bite", "Robert"));
-		repository.save(new Utilisateur("louis.billiet@etudiant.univ-lille1.fr", "test", "Louis"));
+		Utilisateur user = new Utilisateur("Louis", "louis.billiet@etudiant.univ-lille1.fr", "test");
+		repository.save(new Utilisateur("hello", "hello@world.com", "maman"));
+		repository.save(new Utilisateur("hello bis", "hello.bis@world.com", "papa"));
+		repository.save(new Utilisateur("Robert", "robert@gayzou.org", "j'aime la bite"));
+		repository.save(user);
 
 		// fetch all Utilisateurs
 		List<Utilisateur> Utilisateurs = repository.findAll();
@@ -33,15 +34,15 @@ public class DevTestUtilisateurJPA {
 		System.out.println();
 
 		// fetch an individual Utilisateur by ID
-		Utilisateur Utilisateur = repository.findOne(1L);
-		System.out.println("Utilisateur found with findOne(1L):");
+		Utilisateur Utilisateur = repository.findOne(user.getUtilisateurId());
+		System.out.println("Utilisateur found with findOne("+user.getUtilisateurId()+"):");
 		System.out.println("--------------------------------");
 		System.out.println(Utilisateur);
 		System.out.println();
 
 		// fetch Utilisateurs by last name
-		List<Utilisateur> bauers = repository.findByPseudo("Bauer");
-		System.out.println("Utilisateur found with findByLastName('Bauer'):");
+		List<Utilisateur> bauers = repository.findByPseudo("Robert");
+		System.out.println("Utilisateur found with findByPseudo('Robert'):");
 		System.out.println("--------------------------------------------");
 		for (Utilisateur bauer : bauers) {
 			System.out.println(bauer);
