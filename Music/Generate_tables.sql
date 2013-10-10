@@ -2,7 +2,6 @@ create table Musique(
 	musique_id bigint,
 	titre varchar(50),
 	artiste varchar(50),
-	proprietaire bigint,
 	data bytea
 );
 
@@ -13,16 +12,14 @@ create table Utilisateur(
 	password varchar(50)
 );
 
-create table Partage(
-	partage_id bigint,
-	musique_id bigint,
-	utilisateur_id bigint
+create table Note(
+	note_id bigint,
+	valeur int check (valeur<6 and valeur>-1),
+	musique_concernee bigint
 );
 
-alter table Musique add primary key (musique_id);
-alter table Utilisateur add primary key (utilisateur_id);
-alter table Partage add primary key (partage_id);
+alter table Musique 		add primary key (musique_id);
+alter table Utilisateur 	add primary key (utilisateur_id);
+alter table Note 			add primary key (note_id);
 
-alter table Musique add foreign key (proprietaire) references Utilisateur (utilisateur_id);
-alter table Partage add foreign key (musique_id) references Musique (musique_id);
-alter table Partage add foreign key (utilisateur_id) references Utilisateur (utilisateur_id);
+alter table Note			add foreign key (musique_concernee) 	references Musique (musique_id);

@@ -25,21 +25,11 @@ public class Musique implements Serializable {
 
 	private String titre;
 
-	//bi-directional many-to-one association to Utilisateur
-	@ManyToOne
-	@JoinColumn(name="proprietaire")
-	private Utilisateur utilisateur;
-
-	//bi-directional many-to-one association to Partage
+	//bi-directional many-to-one association to Note
 	@OneToMany(mappedBy="musique")
-	private List<Partage> partages;
+	private List<Note> notes;
 
-	private Musique() {}
-	
-	public Musique(String artiste, String titre){
-		this.artiste = artiste;
-		this.titre = titre;
-		this.data = new byte[0];
+	public Musique() {
 	}
 
 	public Long getMusiqueId() {
@@ -74,34 +64,26 @@ public class Musique implements Serializable {
 		this.titre = titre;
 	}
 
-	public Utilisateur getUtilisateur() {
-		return this.utilisateur;
+	public List<Note> getNotes() {
+		return this.notes;
 	}
 
-	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
+	public void setNotes(List<Note> notes) {
+		this.notes = notes;
 	}
 
-	public List<Partage> getPartages() {
-		return this.partages;
+	public Note addNote(Note note) {
+		getNotes().add(note);
+		note.setMusique(this);
+
+		return note;
 	}
 
-	public void setPartages(List<Partage> partages) {
-		this.partages = partages;
-	}
+	public Note removeNote(Note note) {
+		getNotes().remove(note);
+		note.setMusique(null);
 
-	public Partage addPartage(Partage partage) {
-		getPartages().add(partage);
-		partage.setMusique(this);
-
-		return partage;
-	}
-
-	public Partage removePartage(Partage partage) {
-		getPartages().remove(partage);
-		partage.setMusique(null);
-
-		return partage;
+		return note;
 	}
 
 }

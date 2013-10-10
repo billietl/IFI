@@ -3,7 +3,7 @@
 	<persistence-unit name="Music" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>fr.univlille1.tiir.music.dao.entities.Musique</class>
-		<class>fr.univlille1.tiir.music.dao.entities.Partage</class>
+		<class>fr.univlille1.tiir.music.dao.entities.Note</class>
 		<class>fr.univlille1.tiir.music.dao.entities.Utilisateur</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/ifidb"/>

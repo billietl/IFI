@@ -1,10 +1,7 @@
 package fr.univlille1.tiir.music.dao.entities;
 
 import java.io.Serializable;
-
 import javax.persistence.*;
-
-import java.util.List;
 
 
 /**
@@ -27,20 +24,12 @@ public class Utilisateur implements Serializable {
 
 	private String pseudo;
 
-	//bi-directional many-to-one association to Musique
-	@OneToMany(mappedBy="utilisateur")
-	private List<Musique> musiques;
-
-	//bi-directional many-to-one association to Partage
-	@OneToMany(mappedBy="utilisateur")
-	private List<Partage> partages;
-
 	private Utilisateur() {}
 	
-	public Utilisateur(String email, String password, String pseudo){
+	public Utilisateur(String pseudo, String email, String passwd){
 		this.email = email;
 		this.pseudo = pseudo;
-		this.password = password;
+		this.password = passwd;
 	}
 
 	public Long getUtilisateurId() {
@@ -74,49 +63,9 @@ public class Utilisateur implements Serializable {
 	public void setPseudo(String pseudo) {
 		this.pseudo = pseudo;
 	}
-
-	public List<Musique> getMusiques() {
-		return this.musiques;
-	}
-
-	public void setMusiques(List<Musique> musiques) {
-		this.musiques = musiques;
-	}
-
-	public Musique addMusique(Musique musique) {
-		getMusiques().add(musique);
-		musique.setUtilisateur(this);
-
-		return musique;
-	}
-
-	public Musique removeMusique(Musique musique) {
-		getMusiques().remove(musique);
-		musique.setUtilisateur(null);
-
-		return musique;
-	}
-
-	public List<Partage> getPartages() {
-		return this.partages;
-	}
-
-	public void setPartages(List<Partage> partages) {
-		this.partages = partages;
-	}
-
-	public Partage addPartages(Partage partages) {
-		getPartages().add(partages);
-		partages.setUtilisateur(this);
-
-		return partages;
-	}
-
-	public Partage removePartages(Partage partages) {
-		getPartages().remove(partages);
-		partages.setUtilisateur(null);
-
-		return partages;
+	
+	public String toString(){
+		return "Utilisateur : "+this.pseudo;
 	}
 
 }
