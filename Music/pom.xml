@@ -12,6 +12,11 @@
 			<version>3.2.4.RELEASE</version>
 		</dependency>
 		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>0.5.0.M4</version>
+        </dependency>
+		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>1.4.1.RELEASE</version>
@@ -82,5 +87,5 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-	<packaging>jar</packaging>
+    <packaging>war</packaging>
 </project>
