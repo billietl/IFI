@@ -1,4 +1,4 @@
-package fr.univlille1.tiir.controller;
+package fr.univlille1.tiir.music.controller;
 
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

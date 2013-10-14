@@ -1,4 +1,4 @@
-package fr.univlille1.tiir.music.dao.Repository;
+package fr.univlille1.tiir.music.dao.repository;
 
 import java.util.List;
 
