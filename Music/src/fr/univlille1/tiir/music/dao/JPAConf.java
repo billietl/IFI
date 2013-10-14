@@ -49,4 +49,8 @@ public class JPAConf {
 	public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 		return new JpaTransactionManager(entityManagerFactory);
 	}
+	
+	public void doNothing(){
+		return;
+	}
 }
