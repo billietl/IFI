@@ -7,11 +7,12 @@
 <title>TIIR Web Music</title>
 </head>
 <body>
-<h2>TIIR Web Music !</h2>
-<h3>La musique tout &agrave; fait l&eacute;gale diffus&eacute;e par le M2 TIIR !</h3>
 <jsp:include page="fucking_pub.jsp"></jsp:include>
-<p>On va voir si on te connais : <a href="formulaire_connection.jsp">se connecter</a></p>
-<p>T'es un p'tit nouveau ? Viens te faire bizuter <a href="formulaire_creation_compte.jsp">ici</a> tiens !</p>
-<p>CSS ? Non, jamais entendu parler...</p>
+<center>
+<form method="POST" action="service_connexion_ici" enctype="x-www-form-urlencoded"><br/>
+Pseudo : <input type="text" name="login"/><br/>
+Mot de passe : <input type="password" name="passwd"/><br/>
+<input type="submit" value="CONNEXION !!!"/>
+</form></center>
 </body>
 </html>
