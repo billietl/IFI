@@ -11,20 +11,24 @@
 	<jsp:include page="fucking_pub.jsp"/>
 	<h1>Le formulaire d'inscription de noob :</h1>
 	<center>
-		<form method="POST" action="service_creation_compte_ici"
+		<form id="formulaire" method="POST" action="service_creation_compte_ici"
 			enctype="x-www-form-urlencoded">
-			Pseudo : <input type="text" name="login" /><br />
-			Adresse e-mail : <input type="text" name="email" /><br />
-			Mot de passe : <input type="password" name="passwd" /><br />
-			Confirmez le mot de passe : <input type="password" name="passwd_bis" /><br />
+			Pseudo : <input type="text" name="pseudo" id="pseudo" /><br />
+			Adresse e-mail : <input type="text" name="email" id="email" /><br />
+			Mot de passe : <input type="password" name="passwd" id="passwd" /><br />
+			Confirmez le mot de passe : <input type="password" name="passwd_bis" id="passwd_bis" /><br />
 			<input id="submit" type="submit" value="CREATION !!!" />
 		</form>
 	</center>
 </body>
 <script type="text/javascript">
-YUI().use('button', function(Y){
-    var button = new Y.Button({
-        srcNode: '#submit'
+YUI().use('event', 'node', function(Y){
+    Y.one('#formulaire').on("submit", function(e){
+    	var OK = true;
+    	if(Y.one('#pseudo').get('value') == ''){OK = false;}
+    	if(Y.one('#email').get('value') == ''){OK = false;}
+    	if(Y.one('#passwd').get('value') == Y.one('#passwd_bis').get('value')){OK = false;}
+    	if(!OK){e.preventDefault();}
     });
 });
 </script>
