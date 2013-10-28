@@ -10,7 +10,7 @@
 	<h2>TIIR Web Music !</h2>
 	<h3>La musique tout &agrave; fait l&eacute;gale diffus&eacute;e
 		par le M2 TIIR !</h3>
-	<jsp:include page="fucking_pub.jsp"/>
+	<jsp:include page="import/fucking_pub.jsp"/>
 	<p>
 		On va voir si on te connais : <a href="formulaire_connection.jsp">se
 			connecter</a>

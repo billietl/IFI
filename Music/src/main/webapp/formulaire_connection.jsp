@@ -8,7 +8,7 @@
 <title>TIIR Web Music</title>
 </head>
 <body>
-	<jsp:include page="fucking_pub.jsp" />
+	<jsp:include page="import/fucking_pub.jsp" />
 	<h2>Le formulaire de connexion de madame :</h2>
 	<form id="formulaire" method="POST" action="service_connexion_ici"
 		enctype="x-www-form-urlencoded">

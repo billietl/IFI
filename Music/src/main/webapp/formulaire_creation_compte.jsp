@@ -8,7 +8,7 @@
 <title>TIIR Web Music</title>
 </head>
 <body>
-	<jsp:include page="fucking_pub.jsp" />
+	<jsp:include page="import/fucking_pub.jsp" />
 	<h1>Le formulaire d'inscription de noob :</h1>
 	<form id="formulaire" method="POST"
 		action="service_creation_compte_ici" enctype="x-www-form-urlencoded">

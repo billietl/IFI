@@ -11,7 +11,7 @@
 <title>TIIR Web Music</title>
 </head>
 <body>
-	<jsp:include page="fucking_pub.jsp"/>
+	<jsp:include page="import/fucking_pub.jsp"/>
 	<div id="lecteur audio">
 		<h1>Lecteur</h1>
 		<p>Pour le lecteur en lui m&ecirc;me, on va utiliser <a href="http://www.alsacreations.fr/dewplayer.html">dewplayer</a>.</p>
