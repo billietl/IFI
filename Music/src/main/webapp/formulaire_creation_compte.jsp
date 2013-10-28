@@ -3,11 +3,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.13.0/build/cssbase/cssbase-min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <script src="http://yui.yahooapis.com/3.13.0/build/yui/yui-min.js"></script>
 <title>TIIR Web Music</title>
 </head>
-<body>
+<body class="yui3-cssbase">
 	<jsp:include page="import/fucking_pub.jsp" />
 	<h1>Le formulaire d'inscription de noob :</h1>
 	<form id="formulaire" method="POST"
