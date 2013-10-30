@@ -14,7 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>TIIR Web Music</title>
 </head>
-<body class="yui3-cssbase">
+<body class="yui3-skin-sam">
 	<jsp:include page="import/fucking_pub.jsp" />
 	<div id="lecteur audio">
 		<h1>Lecteur</h1>
@@ -30,54 +30,54 @@
 		<p>On acc&egrave;dera a la piste audio via REST (ou autre).</p>
 		<div id="paginator_liste_lecture">
 		</div>
+		<div id="paginator">
+		</div>
 	</div>
 </body>
 <script type="text/javascript">
 YUI().use("datatable", "datasource-get", "datasource-jsonschema", "datatable-datasource", function(Y) {
 	
-	var myDataSource = new Y.DataSource.Get({
-	    source: "http://localhost:8080/music/bouchon/ListMusic.jsp?format=json&"
-	});
-	
+	var myDataSource = new Y.DataSource.Get({source: "http://localhost:8080/music/bouchon/ListMusic.jsp?format=json&"});
 	myDataSource.plug(Y.Plugin.DataSourceJSONSchema, {
         schema: {
         	resultListLocator: "list",
             resultFields: ["Artiste", "Titre", "id", "moy"]
         }
     });
-	
 	function format_play(o){
-		return "<a href=\"#\" onclick=\"play("+o.data.id+")\"><img src=\"img/play.jpg\" alt=\"Play\" height=\"42\" width=\"42\"/></a>";
+		return "<center><a href=\"#\" onclick=\"play("+o.data.id+")\"><img src=\"img/play.jpg\" alt=\"Play\" height=\"42\" width=\"42\"/></a></center>";
 	}
-	
 	function format_note(o){
+		var note="";
 		switch(o.data.moy){
-		case "0":return '.....';
-		case "1":return '|....';
-		case "2":return '||...';
-		case "3":return '|||..';
-		case "4":return '||||.';
-		case "5":return '|||||';
-		default: return '.....';
+		default:note='.....';break;
+		case "0":note='.....';break;
+		case "1":note='....|';break;
+		case "2":note='...||';break;
+		case "3":note='..|||';break;
+		case "4":note='.||||';break;
+		case "5":note='|||||';break;
 		}
+		return "<center>"+note+"</center>";
 	}
-	
     var myDataTable = new Y.DataTable({
         columns:    [
-                     "Artiste", 
-                     "Titre", 
+                     { key: "Artiste", sortable: true}, 
+                     { key: "Titre", sortable: true},
                      { label: "Action", formatter: format_play, allowHTML: true }, 
-                     { label: "Note", formatter: format_note, allowHTML: true }],
+                     { label: "Note", formatter: format_note, allowHTML: true, sortable: true,
+                    	 sortFn: function(a,b,desc){
+                    		 var aval = a.get("moy"),
+                    			 bval = b.get("moy"),
+                    			 order= aval>bval?-1:1;
+                    			 order=desc?-order:order
+                    		 return aval==bval?0:order;
+                    	 }}],
         scrollable: 'y',
-        sortable: true
+        sortBy: {Artiste : 1}
     });
- 	
-    myDataTable.plug(Y.Plugin.DataTableDataSource, {
-        datasource: myDataSource
-    });
-    
+    myDataTable.plug(Y.Plugin.DataTableDataSource, {datasource: myDataSource});
     myDataTable.render('#paginator_liste_lecture');
-    
     myDataTable.datasource.load();
  
 });
