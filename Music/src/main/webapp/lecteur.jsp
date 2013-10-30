@@ -7,9 +7,10 @@
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.13.0/build/cssbase/cssbase-min.css">
 <script src="http://yui.yahooapis.com/3.13.0/build/yui/yui-min.js"></script>
 <script type="text/javascript">
-	function play(music_id){
+	var play = function(music_id){
 		alert("Vous voulez jouer la musique d'id "+music_id);
-	}
+	};
+	var vote = null;
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>TIIR Web Music</title>
@@ -35,8 +36,8 @@
 	</div>
 </body>
 <script type="text/javascript">
-YUI().use("datatable", "datasource-get", "datasource-jsonschema", "datatable-datasource", function(Y) {
-	
+YUI().use("io-base", "datatable", "datasource-get", "datasource-jsonschema", "datatable-datasource", function(Y) {
+	// Gestion de la liste des titres
 	var myDataSource = new Y.DataSource.Get({source: "http://localhost:8080/music/bouchon/ListMusic.jsp?format=json&"});
 	myDataSource.plug(Y.Plugin.DataSourceJSONSchema, {
         schema: {
@@ -52,10 +53,10 @@ YUI().use("datatable", "datasource-get", "datasource-jsonschema", "datatable-dat
 		switch(o.data.moy){
 		default:note='.....';break;
 		case "0":note='.....';break;
-		case "1":note='....|';break;
-		case "2":note='...||';break;
-		case "3":note='..|||';break;
-		case "4":note='.||||';break;
+		case "1":note='|....';break;
+		case "2":note='||...';break;
+		case "3":note='|||..';break;
+		case "4":note='||||.';break;
 		case "5":note='|||||';break;
 		}
 		return "<center>"+note+"</center>";
@@ -70,7 +71,7 @@ YUI().use("datatable", "datasource-get", "datasource-jsonschema", "datatable-dat
                     		 var aval = a.get("moy"),
                     			 bval = b.get("moy"),
                     			 order= aval>bval?-1:1;
-                    			 order=desc?-order:order
+                    			 order=desc?-order:order;
                     		 return aval==bval?0:order;
                     	 }}],
         scrollable: 'y',
@@ -79,6 +80,18 @@ YUI().use("datatable", "datasource-get", "datasource-jsonschema", "datatable-dat
     myDataTable.plug(Y.Plugin.DataTableDataSource, {datasource: myDataSource});
     myDataTable.render('#paginator_liste_lecture');
     myDataTable.datasource.load();
+    
+    // Gestion des votes asynchrones
+    Y.on('io:complete', function(id,o,args){
+		if(o.responseText.contains("1")){
+			alert("Merci pour le vote !");
+		}else{
+			alert("Désolé, mais tu as déjà voté pour ce titre !")
+		}
+	}, Y, null);
+    vote = function(music_id, note){
+    	Y.io("bouchon/NoteMusic.jsp?note=\""+note+"\"&mid=\""+music_id+"\"");
+    };
  
 });
 </script>
