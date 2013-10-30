@@ -1,20 +1,10 @@
-<%@ page language="java" contentType="application/json" pageEncoding="UTF-8"%>
 <%if(session.getAttribute("sessionID") != null){return;}%>
-{ "list":[
-	{
-		"artiste": "Interpol",
-		"titre": "Slow Hands"
-	},
-	{
-		"artiste": "Soulgrind",
-		"titre": "Farewell to misery"
-	},
-	{
-		"artiste": "Red Hot Chili Pepper",
-		"titre": "Scar Tissue"
-	},
-	{
-		"artiste": "Skid Row",
-		"titre": "Monkey Business"
-	}
+<%= request.getParameter("callback") %>(
+{"list":[
+	{"id":"1","Artiste":"Interpol","Titre":"Slow Hands","moy":"4"},
+	{"id":"2","Artiste":"Soulgrind","Titre":"Farewell to misery","moy":"5"},
+	{"id":"3","Artiste":"Red Hot Chili Pepper","Titre":"Scar Tissue","moy":"5"},
+	{"id":"4","Artiste":"Skid Row","Titre":"Monkey Business","moy":"3"},
+	{"id":"5","Artiste":"Justin Bieber","Titre":"Baby","moy":"0"}
 ]}
+);

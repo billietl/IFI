@@ -6,6 +6,11 @@
 <head>
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.13.0/build/cssbase/cssbase-min.css">
 <script src="http://yui.yahooapis.com/3.13.0/build/yui/yui-min.js"></script>
+<script type="text/javascript">
+	function play(music_id){
+		alert("Vous voulez jouer la musique d'id "+music_id);
+	}
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>TIIR Web Music</title>
 </head>
@@ -31,18 +36,38 @@
 YUI().use("datatable", "datasource-get", "datasource-jsonschema", "datatable-datasource", function(Y) {
 	
 	var myDataSource = new Y.DataSource.Get({
-	    source: "http://localhost:8080/music/bouchon/ListMusic.jsp?"
+	    source: "http://localhost:8080/music/bouchon/ListMusic.jsp?format=json&"
 	});
 	
 	myDataSource.plug(Y.Plugin.DataSourceJSONSchema, {
         schema: {
         	resultListLocator: "list",
-            resultFields: ["artiste", "titre"]
+            resultFields: ["Artiste", "Titre", "id", "moy"]
         }
     });
 	
+	function format_play(o){
+		return "<a href=\"#\" onclick=\"play("+o.data.id+")\"><img src=\"img/play.jpg\" alt=\"Play\" height=\"42\" width=\"42\"/></a>";
+	}
+	
+	function format_note(o){
+		switch(o.data.moy){
+		case "0":return '.....';
+		case "1":return '|....';
+		case "2":return '||...';
+		case "3":return '|||..';
+		case "4":return '||||.';
+		case "5":return '|||||';
+		default: return '.....';
+		}
+	}
+	
     var myDataTable = new Y.DataTable({
-        columns:    ["Artiste", "Titre", "action"],
+        columns:    [
+                     "Artiste", 
+                     "Titre", 
+                     { label: "Action", formatter: format_play, allowHTML: true }, 
+                     { label: "Note", formatter: format_note, allowHTML: true }],
         scrollable: 'y',
         sortable: true
     });
