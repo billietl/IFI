@@ -48,6 +48,9 @@ YUI().use("io-base", "datatable", "datasource-get", "datasource-jsonschema", "da
 	function format_play(o){
 		return "<center><a href=\"#\" onclick=\"play("+o.data.id+")\"><img src=\"img/play.jpg\" alt=\"Play\" height=\"42\" width=\"42\"/></a></center>";
 	}
+	function format_vote(o){
+		 return "<center><select id='vote_select"+o.data.id+"' onChange='vote("+o.data.id+", document.getElementById(\"vote_select"+o.data.id+"\").selectedIndex)'><option value='-1' selected>Choisissez une note</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></center>";
+	}
 	function format_note(o){
 		var note="";
 		switch(o.data.moy){
@@ -73,7 +76,8 @@ YUI().use("io-base", "datatable", "datasource-get", "datasource-jsonschema", "da
                     			 order= aval>bval?-1:1;
                     			 order=desc?-order:order;
                     		 return aval==bval?0:order;
-                    	 }}],
+                    	 }},
+			{ label: "Voter", formatter: format_vote, allowHTML: true}],
         scrollable: 'y',
         sortBy: {Artiste : 1}
     });
@@ -90,9 +94,10 @@ YUI().use("io-base", "datatable", "datasource-get", "datasource-jsonschema", "da
 		}
 	}, Y, null);
     vote = function(music_id, note){
+    	if(note != -1){
     	Y.io("bouchon/NoteMusic.jsp?note=\""+note+"\"&mid=\""+music_id+"\"");
-    };
- 
+	}
+    }; 
 });
 </script>
 </html>
