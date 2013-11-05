@@ -1,6 +1,6 @@
 <jsp:include page="import/check_session.jsp"/>
-<%@ page language="java" contentType="text/html; charset=US-ASCII"
-	pageEncoding="US-ASCII"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -95,8 +95,8 @@ YUI().use("io-base", "datatable", "datasource-get", "datasource-jsonschema", "da
 	}, Y, null);
     vote = function(music_id, note){
     	if(note != -1){
-    	Y.io("bouchon/NoteMusic.jsp?note=\""+note+"\"&mid=\""+music_id+"\"");
-	}
+    		Y.io("bouchon/NoteMusic.jsp?note="+note+"&mid="+music_id);
+		}
     }; 
 });
 </script>
