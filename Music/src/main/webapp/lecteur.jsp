@@ -1,13 +1,16 @@
-<jsp:include page="import/check_session.jsp"/>
+<jsp:include page="import/check_session.jsp" />
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.13.0/build/cssbase/cssbase-min.css">
-<link type="text/css" href="player/skin/jplayer.blue.monday.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/3.13.0/build/cssbase/cssbase-min.css">
+<link type="text/css" href="player/skin/jplayer.blue.monday.css"
+	rel="stylesheet" />
 <script src="http://yui.yahooapis.com/3.13.0/build/yui/yui-min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 <script type="text/javascript" src="player/jquery.jplayer.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>TIIR Web Music</title>
@@ -15,58 +18,59 @@
 <body class="yui3-skin-sam">
 	<jsp:include page="import/fucking_pub.jsp" />
 	<div id="lecteur audio">
-		<h1>Lecteur</h1>
-		<p>On ne va pas utiliser dewplayer. Une id&eacute;e ?</p>
 		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-  <div id="jp_container_1" class="jp-audio">
-    <div class="jp-type-single">
-      <div class="jp-gui jp-interface">
-        <ul class="jp-controls">
-          <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-          <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-          <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
-          <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-          <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-          <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-        </ul>
-        <div class="jp-progress">
-          <div class="jp-seek-bar">
-            <div class="jp-play-bar"></div>
-          </div>
-        </div>
-        <div class="jp-volume-bar">
-          <div class="jp-volume-bar-value"></div>
-        </div>
-        <div class="jp-time-holder">
-          <div class="jp-current-time"></div>
-          <div class="jp-duration"></div>
-          <ul class="jp-toggles">
-            <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
-            <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="jp-title">
-        <ul>
-          <li>TIIR Music Player</li>
-        </ul>
-      </div>
-      <div class="jp-no-solution">
-        <span>Update Required</span>
-        To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-      </div>
-    </div>
-  </div>
+		<div id="jp_container_1" class="jp-audio">
+			<div class="jp-type-single">
+				<div class="jp-gui jp-interface">
+					<ul class="jp-controls">
+						<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+						<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+						<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+						<li><a href="javascript:;" class="jp-mute" tabindex="1"
+							title="mute">mute</a></li>
+						<li><a href="javascript:;" class="jp-unmute" tabindex="1"
+							title="unmute">unmute</a></li>
+						<li><a href="javascript:;" class="jp-volume-max" tabindex="1"
+							title="max volume">max volume</a></li>
+					</ul>
+					<div class="jp-progress">
+						<div class="jp-seek-bar">
+							<div class="jp-play-bar"></div>
+						</div>
+					</div>
+					<div class="jp-volume-bar">
+						<div class="jp-volume-bar-value"></div>
+					</div>
+					<div class="jp-time-holder">
+						<div class="jp-current-time"></div>
+						<div class="jp-duration"></div>
+						<ul class="jp-toggles">
+							<li><a href="javascript:;" class="jp-repeat" tabindex="1"
+								title="repeat">repeat</a></li>
+							<li><a href="javascript:;" class="jp-repeat-off"
+								tabindex="1" title="repeat off">repeat off</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="jp-title">
+					<ul>
+						<li>TIIR Music Player</li>
+					</ul>
+				</div>
+				<div class="jp-no-solution">
+					<span>Update Required</span> To play the media you will need to
+					either update your browser to a recent version or update your <a
+						href="http://get.adobe.com/flashplayer/" target="_blank">Flash
+						plugin</a>.
+				</div>
+			</div>
+		</div>
 	</div>
 	<div id="liste lecture">
 		<h1>Liste lecture</h1>
-		<p>Pour chaque piste disponible, un clic modifiera dewplayer pour
-			jouer la piste audio.</p>
 		<p>On acc&egrave;dera a la piste audio via REST (ou autre).</p>
-		<div id="paginator_liste_lecture">
-		</div>
-		<div id="paginator">
-		</div>
+		<div id="paginator_liste_lecture"></div>
+		<div id="paginator"></div>
 	</div>
 </body>
 <script>
