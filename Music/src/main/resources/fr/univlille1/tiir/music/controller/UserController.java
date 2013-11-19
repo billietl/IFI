@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import fr.univlille1.tiir.music.dao.JPAConf;
-import fr.univlille1.tiir.music.dao.Repository.UtilisateurRepository;
+import fr.univlille1.tiir.music.dao.repository.UtilisateurRepository;
 import fr.univlille1.tiir.music.dao.entities.Utilisateur;
 
 @Controller
