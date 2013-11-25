@@ -63,20 +63,6 @@ public class Musique implements Serializable {
 	public void setTitre(String titre) {
 		this.titre = titre;
 	}
-	
-	public Note getNoteMoyenne(){
-		List<Note> noteL = this.getNotes();
-		Integer sum = new Integer(0);
-		for(Note n : noteL){
-			sum += n.getValeur();
-		}
-		Float total = new Float(sum)/new Float(noteL.length);
-		Note result = new Note();
-		result.setValeur(Math.round(total));
-		result.setNoteId(-1);
-		result.setMusique(this);
-		return result;
-	}
 
 	public List<Note> getNotes() {
 		return this.notes;
