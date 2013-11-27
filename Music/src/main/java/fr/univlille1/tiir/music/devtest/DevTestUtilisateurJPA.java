@@ -21,7 +21,7 @@ public class DevTestUtilisateurJPA {
 		Utilisateur user = new Utilisateur("Louis", "louis.billiet@etudiant.univ-lille1.fr", "test");
 		repository.save(new Utilisateur("hello", "hello@world.com", "maman"));
 		repository.save(new Utilisateur("hello bis", "hello.bis@world.com", "papa"));
-		repository.save(new Utilisateur("Robert", "robert@gayzou.org", "j'aime la bite"));
+		repository.save(new Utilisateur("Robert", "robert@gayzou.org", "j'aime la viande"));
 		repository.save(user);
 
 		// fetch all Utilisateurs
