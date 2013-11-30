@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 
-<project xmlns:ivy="antlib:org.apache.ivy.ant" name="Spring" basedir="." default="usage">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="music" basedir="." default="usage">
 	<property file="build.properties" />
 
 	<property name="src.dir" value="src" />
 	<property name="web.dir" value="war" />
+	<property name="lib.dir" value="${web.dir}/WEB-INF/lib" />
 	<property name="build.dir" value="${web.dir}/WEB-INF/classes" />
-	<property name="name" value="Spring" />
+	<property name="name" value="music" />
 
 	<path id="master-classpath">
 		<fileset dir="${web.dir}/WEB-INF/lib">
@@ -26,7 +27,7 @@
 	     ================================= -->
 	<target name="resolve" description="--> retrieve dependencies with ivy">
 		<ivy:cleancache />
-		<ivy:retrieve />
+		<ivy:retrieve pattern="${lib.dir}/[artifact].[ext]" />
 	</target>
 
 	<target name="usage">
@@ -92,7 +93,12 @@
 		<!-- We need the Catalina jars for Tomcat -->
 		<!--  * for other app servers - check the docs -->
 		<fileset dir="${appserver.lib}">
-			<include name="catalina-ant.jar" />
+			<include name="catalina-ant.jar"/>
+			<include name="tomcat-coyote.jar"/>
+			<include name="tomcat-util.jar"/>
+		</fileset>
+		<fileset dir="${appserver.home}/bin">
+			<include name="tomcat-juli.jar"/>
 		</fileset>
 	</path>
 

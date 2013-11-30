@@ -6,7 +6,7 @@
 				<artifact
 					pattern="${ivy.settings.dir}/repository/[artifact]-[revision].[ext]" />
 			</filesystem>
-			<ibiblio name="central" m2compatible="true" />
+			<ibiblio name="central" m2compatible="true" usepoms="false" />
 		</chain>
 
 		<url name="com.springsource.repository.bundles.release">
