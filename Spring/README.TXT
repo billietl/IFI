@@ -1,3 +1,5 @@
+Avancement dans le tuto : On ajoute un peu de JSTL et pouf! plus rien ne marche ><
+----------
 Avancement dans le tuto : j'ai créé un controller, un dispatcher et une vue qui affiche un hello world.
 J'ai enfin l'impression de comprendre quelque chose! :D
 J'en suis au 2.0

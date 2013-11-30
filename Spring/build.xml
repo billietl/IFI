@@ -3,22 +3,22 @@
 <project xmlns:ivy="antlib:org.apache.ivy.ant" name="music" basedir="." default="usage">
 	<property file="build.properties" />
 
-	<property name="src.dir" value="src" />
-	<property name="web.dir" value="war" />
-	<property name="lib.dir" value="${web.dir}/WEB-INF/lib" />
-	<property name="build.dir" value="${web.dir}/WEB-INF/classes" />
-	<property name="name" value="music" />
-
 	<path id="master-classpath">
-		<fileset dir="${web.dir}/WEB-INF/lib">
+		<fileset dir="${lib.dir}">
 			<include name="*.jar" />
 		</fileset>
 		<fileset dir="${appserver.lib}">
-			<include name="servlet*.jar" />
+			<include name="*.jar" />
 		</fileset>
-		<pathelement location="${appserver.lib}/tomcat-coyote.jar" />
-		<pathelement location="${appserver.lib}/tomcat-util.jar" />
-		<pathelement location="${appserver.bin}/tomcat-juli.jar" />
+		<fileset dir="${java.lib}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${java.lib}/jsp2.2-tomcat">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${java.lib}/servlet3.0-tomcat">
+			<include name="*.jar" />
+		</fileset>
 		<pathelement path="${build.dir}" />
 	</path>
 
@@ -26,7 +26,9 @@
 	          target: resolve              
 	     ================================= -->
 	<target name="resolve" description="--> retrieve dependencies with ivy">
-		<ivy:cleancache />
+		<delete includeEmptyDirs="true">
+			<fileset dir="${lib.dir}" includes="*.jar"/>
+		</delete>
 		<ivy:retrieve pattern="${lib.dir}/[artifact].[ext]" />
 	</target>
 
@@ -48,7 +50,7 @@
 		<echo message="" />
 	</target>
 
-	<target name="build" description="Compile main source tree java files">
+	<target name="build" description="Compile main source tree java files" depends="resolve">
 		<mkdir dir="${build.dir}" />
 		<javac destdir="${build.dir}" source="1.5" target="1.5" debug="true" deprecation="false" optimize="false" failonerror="true">
 			<src path="${src.dir}" />
@@ -64,12 +66,9 @@
 		</copy>
 	</target>
 
-	<target name="undeploy" description="Undeploy application">
-		<delete>
-			<fileset dir="${deploy.path}/${name}">
-				<include name="*" />
-			</fileset>
-		</delete>
+	<target name="undeploy" depends="stop" description="Undeploy application">
+		<delete dir="${deploy.path}/${name}" includeEmptyDirs="true"/>
+		<mkdir dir="${deploy.path}/${name}"/>
 	</target>
 
 	<target name="deploywar" depends="build" description="Deploy application as a WAR file">
