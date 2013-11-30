@@ -1,3 +1,6 @@
+Avancement dans le tuto : le fmt:message n'a pas l'air de marcher ><'
+J'en suis au 4.2
+----------
 Avancement dans le tuto : On ajoute un peu de JSTL et pouf! plus rien ne marche ><
 ----------
 Avancement dans le tuto : j'ai créé un controller, un dispatcher et une vue qui affiche un hello world.

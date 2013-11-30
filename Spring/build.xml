@@ -50,6 +50,15 @@
 		<echo message="" />
 	</target>
 
+	<target name="clean" description="Clean output directories">
+		<delete>
+			<fileset dir="${build.dir}">
+				<include name="**/*.class"/>
+			</fileset>
+		</delete>
+	</target>
+
+
 	<target name="build" description="Compile main source tree java files" depends="resolve">
 		<mkdir dir="${build.dir}" />
 		<javac destdir="${build.dir}" source="1.5" target="1.5" debug="true" deprecation="false" optimize="false" failonerror="true">
@@ -66,9 +75,12 @@
 		</copy>
 	</target>
 
-	<target name="undeploy" depends="stop" description="Undeploy application">
-		<delete dir="${deploy.path}/${name}" includeEmptyDirs="true"/>
-		<mkdir dir="${deploy.path}/${name}"/>
+	<target name="undeploy" description="Un-Deploy application">
+		<delete>
+			<fileset dir="${deploy.path}/${name}">
+				<include name="**/*.*"/>
+			</fileset>
+		</delete>
 	</target>
 
 	<target name="deploywar" depends="build" description="Deploy application as a WAR file">
