@@ -147,7 +147,7 @@ YUI().use("io-base", "datatable", "datasource-get", "datasource-jsonschema", "da
 	}, Y, null);
     vote = function(music_id, note){
     	if(note != -1){
-    		Y.io("bouchon/NoteMusic.jsp?note="+note+"&mid="+music_id);
+    		Y.io("action/note_music.htm?note="+note+"&mid="+music_id);
 		}
     }; 
 });

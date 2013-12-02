@@ -11,6 +11,8 @@
 
 	<bean name="/action/list_music.htm"	class="fr.univlille1.tiir.music.web.music.ListMusicController" />
 
+	<bean name="/action/note_music.htm"	class="fr.univlille1.tiir.music.web.music.NoteMusicController" />
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
