@@ -6,8 +6,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.AbstractApplicationContext;
 
 import fr.univlille1.tiir.music.dao.JPAConf;
-import fr.univlille1.tiir.music.dao.Repository.UtilisateurRepository;
 import fr.univlille1.tiir.music.dao.entities.Utilisateur;
+import fr.univlille1.tiir.music.dao.repository.UtilisateurRepository;
 
 
 public class DevTestUtilisateurJPA {

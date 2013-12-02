@@ -24,7 +24,7 @@ public class Utilisateur implements Serializable {
 
 	private String pseudo;
 
-	private Utilisateur() {}
+	public Utilisateur() {}
 	
 	public Utilisateur(String pseudo, String email, String passwd){
 		this.email = email;

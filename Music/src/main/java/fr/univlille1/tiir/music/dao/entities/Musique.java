@@ -85,5 +85,11 @@ public class Musique implements Serializable {
 
 		return note;
 	}
+	
+	public Note getNoteMoyenne(){
+		Note n = new Note();
+		n.setValeur(0);
+		return n;
+	}
 
 }
