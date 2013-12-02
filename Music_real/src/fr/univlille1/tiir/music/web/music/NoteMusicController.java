@@ -21,7 +21,7 @@ public class NoteMusicController implements Controller {
 
         logger.info("Returning list_music view");
 
-        return new ModelAndView("music/list");
+        return new ModelAndView("music/list", "ok", "1");
     }
 
 }
