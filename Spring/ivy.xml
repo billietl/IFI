@@ -13,6 +13,7 @@
 		<dependency org="org.springframework" name="spring-beans" rev="3.2.5.RELEASE" />
 		<dependency org="org.springframework" name="spring-web" rev="3.2.5.RELEASE"/>
         <dependency org="org.springframework" name="spring-expression" rev="3.2.5.RELEASE"/>
+        <dependency org="org.springframework" name="spring-asm" rev="3.0.5.RELEASE"/>
         <!-- Dépendances JSTL -->
         <dependency org="jstl" name="jstl" rev="1.2"/>
         <dependency org="taglibs" name="standard" rev="1.1.2"/>

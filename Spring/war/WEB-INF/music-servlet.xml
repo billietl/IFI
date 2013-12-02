@@ -31,10 +31,22 @@
     </bean>
 
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basename" value="messages"/>
+        <property name="basename" value="music.message"/>
     </bean>
 
 	<bean name="/hello.htm" class="music.web.InventoryController">
+        <property name="productManager" ref="productManager"/>
+    </bean>
+    
+    <bean name="/priceincrease.htm" class="music.web.PriceIncreaseFormController">
+        <property name="sessionForm" value="true"/>
+        <property name="commandName" value="priceIncrease"/>
+        <property name="commandClass" value="music.service.PriceIncrease"/>
+        <property name="validator">
+            <bean class="music.service.PriceIncreaseValidator"/>
+        </property>
+        <property name="formView" value="priceincrease"/>
+        <property name="successView" value="hello.htm"/>
         <property name="productManager" ref="productManager"/>
     </bean>
 
