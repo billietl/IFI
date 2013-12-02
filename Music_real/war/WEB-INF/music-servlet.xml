@@ -13,6 +13,8 @@
 
 	<bean name="/action/note_music.htm"	class="fr.univlille1.tiir.music.web.music.NoteMusicController" />
 
+	<bean name="/get/*"	class="fr.univlille1.tiir.music.web.music.MusicRetriever" />
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
