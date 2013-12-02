@@ -89,7 +89,7 @@ var play = function(music_id){
 var vote = null;
 YUI().use("io-base", "datatable", "datasource-get", "datasource-jsonschema", "datatable-datasource", function(Y) {
 	// Gestion de la liste des titres
-	var myDataSource = new Y.DataSource.Get({source: "http://localhost:8080/music/action/list_music.htm?format=json&"});
+	var myDataSource = new Y.DataSource.Get({source: "action/list_music.htm?format=json&"});
 	myDataSource.plug(Y.Plugin.DataSourceJSONSchema, {
         schema: {
         	resultListLocator: "list",
