@@ -2,40 +2,49 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/data/jpa
+    http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+	<jpa:repositories base-package="fr.univlille1.tiir.music.dao.repository" />
 
 	<bean name="/accueil.htm" class="fr.univlille1.tiir.music.web.AccueilController" />
 
 	<bean name="/lecteur.htm" class="fr.univlille1.tiir.music.web.LecteurController" />
-	
-	<bean name="/create_user.htm" class="fr.univlille1.tiir.music.web.user.CreateUserFormController" >
-		<property name="sessionForm" value="true"/>
-        <property name="commandName" value="createUser"/>
-        <property name="commandClass" value="fr.univlille1.tiir.music.service.Utilisateur"/>
-        <property name="validator">
-            <bean class="fr.univlille1.tiir.music.service.CreateUtilisateurValidator"/>
-        </property>
-        <property name="formView" value="user/create_user"/>
-        <property name="successView" value="lecteur.htm"/>
-	</bean>
-	
-	<bean name="/login.htm" class="fr.univlille1.tiir.music.web.user.LoginUtilisateurFormController" >
-		<property name="sessionForm" value="true"/>
-        <property name="commandName" value="loginUser"/>
-        <property name="commandClass" value="fr.univlille1.tiir.music.service.Utilisateur"/>
-        <property name="validator">
-            <bean class="fr.univlille1.tiir.music.service.LoginUtilisateurValidator"/>
-        </property>
-        <property name="formView" value="user/login"/>
-        <property name="successView" value="lecteur.htm"/>
+
+	<bean name="/create_user.htm"
+		class="fr.univlille1.tiir.music.web.user.CreateUserFormController">
+		<property name="sessionForm" value="true" />
+		<property name="commandName" value="createUser" />
+		<property name="commandClass" value="fr.univlille1.tiir.music.service.Utilisateur" />
+		<property name="validator">
+			<bean class="fr.univlille1.tiir.music.service.CreateUtilisateurValidator" />
+		</property>
+		<property name="formView" value="user/create_user" />
+		<property name="successView" value="lecteur.htm" />
 	</bean>
 
-	<bean name="/action/list_music.htm"	class="fr.univlille1.tiir.music.web.music.ListMusicController" />
+	<bean name="/login.htm"
+		class="fr.univlille1.tiir.music.web.user.LoginUtilisateurFormController">
+		<property name="sessionForm" value="true" />
+		<property name="commandName" value="loginUser" />
+		<property name="commandClass" value="fr.univlille1.tiir.music.service.Utilisateur" />
+		<property name="validator">
+			<bean class="fr.univlille1.tiir.music.service.LoginUtilisateurValidator" />
+		</property>
+		<property name="formView" value="user/login" />
+		<property name="successView" value="lecteur.htm" />
+	</bean>
 
-	<bean name="/action/note_music.htm"	class="fr.univlille1.tiir.music.web.music.NoteMusicController" />
+	<bean name="/action/list_music.htm"
+		class="fr.univlille1.tiir.music.web.music.ListMusicController" />
 
-	<bean name="/get/*.mp3"	class="fr.univlille1.tiir.music.web.music.MusicRetriever" />
+	<bean name="/action/note_music.htm"
+		class="fr.univlille1.tiir.music.web.music.NoteMusicController" />
+
+	<bean name="/get/*.mp3" class="fr.univlille1.tiir.music.web.music.MusicRetriever" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
