@@ -3,7 +3,7 @@
 <project xmlns:ivy="antlib:org.apache.ivy.ant" name="music" basedir="." default="usage">
 	<property file="build.properties" />
 
-	<setproxy proxyhost="cache-etu.univ-lille1.fr" proxyport="3128"/>
+	<!--<setproxy proxyhost="cache-etu.univ-lille1.fr" proxyport="3128"/>-->
 
 	<path id="master-classpath">
 		<fileset dir="${lib.dir}">

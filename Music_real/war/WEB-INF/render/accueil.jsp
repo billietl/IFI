@@ -13,10 +13,10 @@
 		par le M2 TIIR !</h3>
 	<jsp:include page="fucking_pub.jsp"/>
 	<p>
-		On va voir si on te connais : <a href="formulaire_connection.jsp">se connecter</a>
+		On va voir si on te connais : <a href="login.htm">se connecter</a>
 	</p>
 	<p>
-		T'es un p'tit nouveau ? Viens te faire bizuter <a href="formulaire_creation_compte.jsp">ici</a> tiens !
+		T'es un p'tit nouveau ? Viens te faire bizuter <a href="<c:url value="create_user.htm"/>">ici</a> tiens !
 	</p>
 	<p>CSS ? Non, jamais entendu parler...</p>
 </body>

@@ -8,12 +8,23 @@
 	<bean name="/accueil.htm" class="fr.univlille1.tiir.music.web.AccueilController" />
 
 	<bean name="/lecteur.htm" class="fr.univlille1.tiir.music.web.LecteurController" />
+	
+	<bean name="/create_user.htm" class="fr.univlille1.tiir.music.web.user.CreateUserFormController" >
+		<property name="sessionForm" value="true"/>
+        <property name="commandName" value="createUser"/>
+        <property name="commandClass" value="fr.univlille1.tiir.music.service.Utilisateur"/>
+        <property name="validator">
+            <bean class="fr.univlille1.tiir.music.service.CreateUtilisateurValidator"/>
+        </property>
+        <property name="formView" value="user/create_user"/>
+        <property name="successView" value="lecteur.htm"/>
+	</bean>
 
 	<bean name="/action/list_music.htm"	class="fr.univlille1.tiir.music.web.music.ListMusicController" />
 
 	<bean name="/action/note_music.htm"	class="fr.univlille1.tiir.music.web.music.NoteMusicController" />
 
-	<bean name="/get/*"	class="fr.univlille1.tiir.music.web.music.MusicRetriever" />
+	<bean name="/get/*.mp3"	class="fr.univlille1.tiir.music.web.music.MusicRetriever" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

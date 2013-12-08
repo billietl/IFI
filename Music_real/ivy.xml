@@ -16,6 +16,7 @@
         <dependency org="org.springframework" name="spring-asm" rev="3.0.5.RELEASE"/>
         <dependency org="org.springframework.data" name="spring-data-jpa" rev="1.4.1.RELEASE"/>
         <dependency org="org.springframework.data" name="spring-data-commons" rev="1.6.2.RELEASE"/>
+        <dependency org="org.springmodules" name="spring-modules-validation" rev="0.8"/>
         <!-- Dépendances JSTL -->
         <dependency org="jstl" name="jstl" rev="1.2"/>
         <dependency org="taglibs" name="standard" rev="1.1.2"/>
@@ -23,7 +24,7 @@
         <dependency org="org.apache.tomcat" name="servlet-api" rev="6.0.37"/>
         <dependency org="org.apache.tomcat" name="jsp-api" rev="6.0.37"/>
         <dependency org="org.apache.tomcat" name="jasper" rev="6.0.37"/>
-        <!-- Dépendances pour al persistance -->
+        <!-- Dépendances pour la persistance -->
         <dependency org="javax.persistence" name="persistence-api" rev="1.0-rev-1"/>
 	</dependencies>
 </ivy-module>
