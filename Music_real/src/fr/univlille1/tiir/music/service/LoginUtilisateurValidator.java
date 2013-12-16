@@ -6,6 +6,8 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import fr.univlille1.tiir.music.service.dto.Utilisateur;
+
 public class LoginUtilisateurValidator implements Validator {
 
 	/** Logger for this class and subclasses */
@@ -24,8 +26,8 @@ public class LoginUtilisateurValidator implements Validator {
         }
         else {
             logger.info("Validating with " + u + ": " + u.getPseudo());
-            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "pseudo", "", "Le pseudo ne peut pas être vide.");
-            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "passwd", "", "Le mot de passe ne peut pas être vide.");
+            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "pseudo", "", "Le pseudo ne peut pas etre vide.");
+            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "passwd", "", "Le mot de passe ne peut pas etre vide.");
         }
 	}
 

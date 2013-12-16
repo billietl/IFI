@@ -79,7 +79,7 @@ my_jPlayer.jPlayer({swfPath:"player/"})
 var play = function(music_id){
 	my_jPlayer.jPlayer("stop");
 	my_jPlayer.jPlayer("setMedia", {
-		mp3: "music/test.mp3"
+		mp3: "music/get/"+music_id+".mp3"
 	});
 	my_jPlayer.jPlayer("play");
 	first_track = false;
