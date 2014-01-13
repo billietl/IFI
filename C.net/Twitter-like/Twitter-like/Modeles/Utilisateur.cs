@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Twitter_like.Data;
 
-namespace Twitter_like.Modèles
+namespace Twitter_like.Modeles
 {
     public class Utilisateur
     {
