@@ -12,5 +12,10 @@ namespace Twitter_like.Modeles
         {
             return false;
         }
+
+        public static bool is_login_ok(String pseudo, String password)
+        {
+            return false;
+        }
     }
 }
