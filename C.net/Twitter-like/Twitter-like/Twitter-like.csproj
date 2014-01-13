@@ -70,6 +70,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Modèles\Utilisateur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -93,9 +94,7 @@
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modèles\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
