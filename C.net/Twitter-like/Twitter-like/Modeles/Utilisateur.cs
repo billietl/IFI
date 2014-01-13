@@ -8,5 +8,9 @@ namespace Twitter_like.Modeles
 {
     public class Utilisateur
     {
+        public static bool exists(Utilisateur u)
+        {
+            return false;
+        }
     }
 }
