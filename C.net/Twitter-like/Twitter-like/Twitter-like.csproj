@@ -112,14 +112,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="index.html" />
-    <Content Include="Vues\index.html">
-      <BrowseToURL>~/Vues/index.html</BrowseToURL>
-    </Content>
     <Content Include="Vues\login.aspx" />
     <Content Include="Vues\signup.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlleurs\IndexController.cs" />
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Data\DataClasses1.cs">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
@@ -162,10 +159,15 @@
     <None Include="Data\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controlleurs\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
