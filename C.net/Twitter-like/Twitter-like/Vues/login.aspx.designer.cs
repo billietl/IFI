@@ -10,7 +10,16 @@
 namespace Twitter_like.Vues {
     
     
-    public partial class WebForm1 {
+    public partial class login {
+        
+        /// <summary>
+        /// Contrôle error_text.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl error_text;
         
         /// <summary>
         /// Contrôle form1.

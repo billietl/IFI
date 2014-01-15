@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="connexion.aspx.cs" Inherits="Twitter_like.Vues.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Twitter_like.Vues.login" %>
 
 <!DOCTYPE html>
 
@@ -8,8 +8,9 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
+    <div>
+        <span id="error_text" runat="server"></span>
+        <form id="form1" runat="server">
             Login :
         <asp:TextBox ID="pseudo_TextBox" runat="server"></asp:TextBox>
             <br />
@@ -17,7 +18,7 @@
             <asp:TextBox ID="passwd_TextBox" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="Connect_Button" runat="server" OnClick="Connect_Button_Click" Text="Connexion" />
-        </div>
-    </form>
+        </form>
+    </div>
 </body>
 </html>
