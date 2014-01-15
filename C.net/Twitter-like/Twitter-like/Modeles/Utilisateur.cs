@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -27,6 +28,15 @@ namespace Twitter_like.Modeles
         }
         public static bool exists(Utilisateur u)
         {
+            // DataContext takes a connection string 
+            DataContext db = new DataBase("c:\\northwind\\northwnd.mdf");
+            // Get a typed table to run queries
+            Table<Utilisateur> Customers = db.GetTable<Utilisateur>();
+            // Query for customers from London
+            var q =
+               from c in Customers
+               where c.City == "London"
+               select c;
             return false;
         }
 
