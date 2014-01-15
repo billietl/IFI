@@ -7,5 +7,6 @@ namespace Twitter_like.Modeles
 {
     public class Message
     {
+
     }
 }
