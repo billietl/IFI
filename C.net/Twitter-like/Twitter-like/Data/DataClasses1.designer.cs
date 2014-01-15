@@ -84,7 +84,7 @@ namespace Twitter_like.Data
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _ID = default(string);
+		private int _ID = default(int);
 		
 		private string _password;
 		
@@ -108,8 +108,8 @@ namespace Twitter_like.Data
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", CanBeNull=false, IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
-		public string ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int ID
 		{
 			get
 			{
@@ -184,7 +184,7 @@ namespace Twitter_like.Data
 					}
 					else
 					{
-						this._ID = default(string);
+						this._ID = default(int);
 					}
 					this.SendPropertyChanged("Message");
 				}
@@ -218,11 +218,11 @@ namespace Twitter_like.Data
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _ID;
+		private int _ID;
 		
 		private string _contenu;
 		
-		private string _proprietaire;
+		private int _proprietaire;
 		
 		private EntitySet<Utilisateur> _Utilisateur;
 		
@@ -230,11 +230,11 @@ namespace Twitter_like.Data
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDChanging(string value);
+    partial void OnIDChanging(int value);
     partial void OnIDChanged();
     partial void OncontenuChanging(string value);
     partial void OncontenuChanged();
-    partial void OnproprietaireChanging(string value);
+    partial void OnproprietaireChanging(int value);
     partial void OnproprietaireChanged();
     #endregion
 		
@@ -244,8 +244,8 @@ namespace Twitter_like.Data
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", CanBeNull=false, IsPrimaryKey=true)]
-		public string ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", IsPrimaryKey=true)]
+		public int ID
 		{
 			get
 			{
@@ -284,8 +284,8 @@ namespace Twitter_like.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_proprietaire", CanBeNull=false)]
-		public string proprietaire
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_proprietaire")]
+		public int proprietaire
 		{
 			get
 			{
