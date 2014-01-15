@@ -89,8 +89,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Modeles\Message.cs" />
-    <Compile Include="Modeles\Utilisateur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vues\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -131,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controlleurs\" />
+    <Folder Include="Modeles\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
