@@ -10,7 +10,7 @@ namespace Twitter_like.Modeles
 {
     public class Utilisateur
     {
-        private string CreateMD5Hash(string input)
+        public static string CreateMD5Hash(string input)
         {
             // Use input string to calculate MD5 hash
             MD5 md5 = System.Security.Cryptography.MD5.Create();
