@@ -7,23 +7,25 @@ using System.Web.UI.WebControls;
 
 namespace Twitter_like.Vues
 {
-    public partial class login : System.Web.UI.Page
+    public partial class signup : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+
         protected void Connect_Button_Click(object sender, EventArgs e)
         {
-            if (/*Utilisateur.exists*/false)
+            if(/* le pseudo est déjà pris */false){
+                error_text.InnerText = "Ce pseudo est déjà pris. D&eacute;sol&eacute; !";
+            }
+            else if(passwd_TextBox.Text.Equals(passwd2_TextBox.Text))
             {
-                /* affichage message erreur */
-                error_text.InnerText = "Impossible de vous connecter. D&eacute;sol&eacute; !";
+                error_text.InnerText = "Les mots de passe ne correspondent pas. D&eacute;sol&eacute; !";
             }
             else
             {
-                /* ouverture session */
-                Response.Redirect("index.aspx");
+
             }
         }
     }
