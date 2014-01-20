@@ -6,13 +6,13 @@ using System.Web.Mvc;
 
 namespace Twitter_like.Controlleurs
 {
-    public class indexController : Controller
+    public class signupController : Controller
     {
         //
-        // GET: /index
-        public ViewResult index()
+        // GET: /FormInscription/
+        public ActionResult Index()
         {
-            return View("Index");
+            return View("Signup");
         }
 	}
 }

@@ -116,7 +116,12 @@
     <Content Include="Vues\signup.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controlleurs\IndexController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controlleurs\signupController.cs" />
+    <Compile Include="Controlleurs\indexController.cs" />
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Data\DataClasses1.cs">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
@@ -160,6 +165,8 @@
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
     <Content Include="web.config" />
+    <Content Include="Views\index\Index.cshtml" />
+    <Content Include="Views\signup\Signup.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
