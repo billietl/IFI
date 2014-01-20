@@ -10,7 +10,7 @@ namespace Twitter_like.Controlleurs
     {
         //
         // GET: /login/
-        public ActionResult Index()
+        public ActionResult Render()
         {
             return View("Login");
         }

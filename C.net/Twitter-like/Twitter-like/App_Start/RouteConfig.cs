@@ -16,7 +16,7 @@ namespace Twitter_like.App_Start
             routes.MapRoute(
                 name: "GoodOne",
                 url: "{controller}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Render", id = UrlParameter.Optional }
             );
         }
     }

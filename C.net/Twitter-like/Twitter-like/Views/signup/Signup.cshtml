@@ -8,10 +8,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Signup</title>
+    <title>Tweetbook - le twitter des TIIRs</title>
 </head>
 <body>
-    <div> 
+    <div>
+        <span id="error_text"></span>
+        <form id="form1" action="signup_action" method="post">
+            Login :
+            <input type="text" name="pseudo" />
+            <br />
+            Password :
+            <input type="password" name="passwd" />
+            <br />
+            R&eacute;petez le password :
+            <input type="password" name="passwd2" />
+            <br />
+            <input type="submit" value="S'inscrire"/>
+        </form>
     </div>
 </body>
 </html>
